@@ -14,21 +14,30 @@
     </div>
 
     <div class="radio-group">
-            <label class="underlined-label">
-                <input type="radio" name="region" value="fargona">
-                Farg'ona
-            </label>
-            <label class="underlined-label">
-                <input type="radio" name="region" value="namangan" checked>
-                Namangan
+            <label class="underlined-label" v-for="region in regions" :key="region.value">
+                <input type="radio" name="region" :value="region.value" v-model="selectedRegion">
+                {{ region.label }}
             </label>
         </div>
-        <button type="button" class="submit-button">DAVOM ETING</button>
+        <button type="button" class="submit-button" @click="handleRegionSelection">DAVOM ETING</button>
     
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+
+const regions = ref([
+  { value: 'fargona', label: "Farg'ona" },
+  { value: 'namangan', label: 'Namangan' }
+]);
+
+const selectedRegion = ref('namangan');
+
+function handleRegionSelection() {
+  console.log('Selected region:', selectedRegion.value);
+}
+</script>
 
 <style>
 

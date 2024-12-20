@@ -100,7 +100,6 @@ const products = ref([
 ]);
 
 function ShowProductAdd() {
-  debugger
   const { open, close } = useModal({
     component: VueFinalModal,
     attrs: {},

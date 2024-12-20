@@ -8,14 +8,14 @@
       </div>
 
       <div class="btn">
-        <button class="btn1" @click="propss.Cancel">Bekor qilish</button>
-        <button class="btn2" @click="propss.Save">Qo'shish</button>
+        <button class="btn1" @click="props.Cancel">Bekor qilish</button>
+        <button class="btn2" @click="props.Save">Qo'shish</button>
       </div>
     </div>
   </div>
 </template>
 <script setup>
-const propss = defineProps({
+const props = defineProps({
   title: { default: null },
   Save: { default: null, type: Function, required: true },
   Cancel: { default: null, type: Function, required: true },

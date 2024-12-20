@@ -12,7 +12,7 @@
      <div v-if="showForm" class="form-container">
        <input class="input" key="username" type="text" placeholder="INNni kiriting" />
        <input class="input" key="password" type="password" placeholder="Parolni kiriting" />
-       <button key="login-button" class="login_btn" onClick="SelectRegion"> <img style="padding-right: 5px;" src="/src/assets/Vector.png" alt=""> Kirish</button>
+       <button key="login-button" class="login_btn" @click="SelectRegion"> <img style="padding-right: 5px;" src="/src/assets/Vector.png" alt=""> Kirish</button>
      </div>
    </transition>
  </div>
@@ -20,10 +20,12 @@
  
  <script setup>
  import { ref, onMounted } from 'vue';
+ import { useRouter } from 'vue-router';
 
 const showLogo = ref(true);
 const logoMoved = ref(false);
 const showForm = ref(false);
+const router = useRouter();
 
 onMounted(() => {
  setTimeout(() => {
@@ -35,7 +37,7 @@ onMounted(() => {
 });
 
 function SelectRegion() {
- 
+  router.push('/selectRegion');
 }
  </script>
  
@@ -140,5 +142,3 @@ input{
 }
 
 </style>
-
- 
