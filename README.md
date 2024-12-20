@@ -27,3 +27,11 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Build Optimizations
+
+The build process has been optimized to include asset compression using `vite-plugin-compression`. This helps in reducing the size of the assets and improves the loading time of the application.
+
+To enable this optimization, the `vite.config.js` file has been updated to include the `vite-plugin-compression` plugin.
+
+Additionally, the GitHub Actions workflow has been updated to include caching for `node_modules`, which speeds up the build process by reusing previously installed dependencies.
