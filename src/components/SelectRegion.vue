@@ -23,12 +23,24 @@
                 Namangan
             </label>
         </div>
-        <button type="button" class="submit-button">DAVOM ETING</button>
+        <button type="button" class="submit-button" @click="handleRegionSelection">DAVOM ETING</button>
     
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const selectedRegion = ref('namangan');
+const router = useRouter();
+
+function handleRegionSelection() {
+  if (selectedRegion.value) {
+    router.push({ name: 'mainPage', query: { region: selectedRegion.value } });
+  }
+}
+</script>
 
 <style>
 
